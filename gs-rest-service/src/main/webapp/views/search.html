@@ -1,0 +1,43 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<div layout="row" layout-align="center center">
+    <md-card flex-sm="100" flex-gt-sm="60" flex-gt-md="40">
+    <form name="form" novalidate ng-submit="search($event)">
+        <md-card-content>
+	        <h2 class="md-title">Magnetic Search</h2>
+	        <p class="error" ng-show="authenticationError">用户登录失败，请检查输入</p>
+	        <div class="inset"></div>
+	        <md-input-container class="md-block"> <label>用户名</label>
+		        <input type="text" name="keyvalue" ng-model="keyvalue" required
+		            md-maxlength="20" ng-pattern="/^[0-9a-zA-Z_]*$/">
+		        <div ng-messages="form.keyvalue.$error">
+		            <div ng-message="required">请输入用户名</div>
+		            <div ng-message="pattern">用户名只能包含英文字母、数字和下划线</div>
+		            <div ng-message="md-maxlength">用户名不能多于20个字符</div>
+		        </div>
+		        {{keyvalue}}
+	        </md-input-container>  
+        </md-card-content>
+        <md-card-actions layout="row" layout-padding
+            layout-align="space-between center"> <md-button
+            type="submit" class="md-primary md-raised">搜索</md-button> </md-card-actions>
+    </form>
+    </md-card>
+    <div class="container">
+	<md-card flex-sm="100" flex-gt-sm="60" flex-gt-md="40">
+	<div  ng-repeat="info in infos">
+	{{ info.title }}
+		<div >
+			<h3>
+				<a href="/wiki/0ea0e4c0293ea05f95d0cebb8ab998420327eda1.html"
+					target="_blank">{{ info.title }}</a>
+			</h3>
+		</div>
+		<div>
+			<span> File Size： <b>{{info.fileSize}}</b>
+			</span> <span>thunder：<b>{{info.thunder}}</b></span> 
+			<span>magnet：<b>{{info.magnet}}</b></span>
+		</div>
+	</div>
+	</md-card>
+</div>
+</div>

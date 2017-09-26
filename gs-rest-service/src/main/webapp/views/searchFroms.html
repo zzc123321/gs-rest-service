@@ -1,0 +1,22 @@
+ <head>
+    <meta charset="UTF-8">
+    <title>searchform.jsp</title>
+  </head>
+<div class="container">
+	<md-card flex-sm="100" flex-gt-sm="60" flex-gt-md="40">
+	<div  ng-repeat="info in infos">
+	{{ info.title }}
+		<div >
+			<h3>
+				<a href="/wiki/0ea0e4c0293ea05f95d0cebb8ab998420327eda1.html"
+					target="_blank">{{ info.title }}</a>
+			</h3>
+		</div>
+		<div>
+			<span> File Size： <b>{{info.fileSize}}</b>
+			</span> <span>thunder：<b>{{info.thunder}}</b></span> 
+			<span>magnet：<b>{{info.magnet}}</b></span>
+		</div>
+	</div>
+	</md-card>
+</div>
